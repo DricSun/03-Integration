@@ -1,0 +1,22 @@
+<div class="container mx-auto mt-8">
+  <h2 class="text-xl font-bold mb-4">Poser un Congé</h2>
+  <form>
+    <div class="mb-4">
+      <label for="debut" class="block text-gray-700">Date de début:</label>
+      <input type="date" id="debut" name="debut" [(ngModel)]="newConge.debut" class="form-input mt-1 block w-full">
+    </div>
+    <div class="mb-4">
+      <label for="fin" class="block text-gray-700">Date de fin:</label>
+      <input type="date" id="fin" name="fin" [(ngModel)]="newConge.fin" class="form-input mt-1 block w-full">
+    </div>
+    <div class="mb-4">
+      <label for="etat" class="block text-gray-700">État:</label>
+      <select id="etat" name="etat" [(ngModel)]="newConge.etat" class="form-select mt-1 block w-full">
+        <option *ngFor="let etat of etats" [value]="etat">{{ etat }}</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Poser le Congé</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+<div class="container mx-auto mt-8">
+  <h1 class="text-2xl font-bold mb-4">Liste des Congés</h1>
+  <div class="bg-white shadow-md rounded-lg p-6">
+    <table class="min-w-full table-auto">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="px-4 py-2">User</th>
+          <th class="px-4 py-2">Début</th>
+          <th class="px-4 py-2">Fin</th>
+          <th class="px-4 py-2">État</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let conge of conges">
+          <td class="border px-4 py-2">{{conge.user}}</td>
+          <td class="border px-4 py-2">{{conge.debut | date:'dd/MM/yyyy'}}</td>
+          <td class="border px-4 py-2">{{conge.fin | date:'dd/MM/yyyy'}}</td>
+          <td class="border px-4 py-2">
+              <span [ngClass]="conge.etat">{{ conge.etat }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
